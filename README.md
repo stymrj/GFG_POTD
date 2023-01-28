@@ -5,3 +5,4 @@ Geeksforgeek problem of the Day Daily updation...
 - It will enhance your coding skills
 - Gfg Potd
 - geeksforgeeks problem of the day 
+- Problems Link : https://practice.geeksforgeeks.org/problem-of-the-day
