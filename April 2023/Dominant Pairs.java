@@ -46,11 +46,27 @@ The sum of n over all test cases won't exceed 10^6
 
 class Solution {
     public static int dominantPairs(int n, int[] arr) {
+        Arrays.sort(arr, n/2, n);
         Arrays.sort(arr, 0, n/2);
-        int ans = 0;
-        for (int i = n/2; i < n; i++) {
-            ans += n/2 - Arrays.binarySearch(arr, 0, n/2, 5 * arr[i]);
+        int p1 = n/2-1;
+        int p2 = n/2;
+        int sum = 0;
+        int max = 0;
+        for(int i = 0; i < n/2; i++){
+            int si = n/2;
+            int ei = n-1;
+            int count = 0;
+            while(si <= ei){
+                int mid = (si+ei)/2;
+                if(arr[i] >= 5*arr[mid]){
+                    count = (mid-n/2+1);
+                    si = mid+1;
+                }
+                else
+                    ei = mid-1;
+            }
+            sum += count;
         }
-        return ans;
+        return sum;
     }
 }
